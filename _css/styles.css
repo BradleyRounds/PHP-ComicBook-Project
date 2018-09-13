@@ -1,0 +1,541 @@
+@import url("https://fonts.googleapis.com/css?family=Spectral+SC");
+@font-face {
+  font-family: 'MainFont';
+  src: url("../fonts/mainframe-bb.regular.ttf");
+}
+
+/* line 28, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+.nopadding {
+  padding: 0;
+}
+
+/* line 29, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+.nomargin {
+  margin: 0;
+}
+
+/* line 32, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+html {
+  background-color: #145976;
+  background-image: url(../images/body_background_dark.png);
+  background-repeat: repeat;
+}
+
+/* line 38, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+body {
+  width: 80vw;
+  margin: 0 auto;
+  background-color: #d2d2d2;
+  border: 3px #507687 outset;
+  box-shadow: -15px 0 50px black;
+  font-family: "Spectral SC", serif;
+  text-align: center;
+  color: black;
+}
+
+/* line 51, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+body div.intro h1 {
+  font-family: 'MainFont';
+  letter-spacing: 2px;
+  font-size: 3rem;
+  margin: 0;
+  padding-left: 25px;
+  /*Text Color*/
+  background-color: #02435f;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -ms-background-clip: text;
+  -o-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: rgba(255, 255, 255, 0.3) 0px 3px 3px;
+}
+
+/* line 63, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+body div.intro ul {
+  text-align: left;
+}
+
+/* line 67, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+button#viewAll {
+  font-family: "Spectral SC", serif;
+  color: #d2d2d2;
+  cursor: pointer;
+  padding: 4px 8px;
+  line-height: 1.2rem;
+  font-weight: 600;
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 5%;
+  background-color: #507687;
+  border: 0;
+  outline: 0;
+  border-bottom: 3px solid #02435f;
+  border-radius: 3px;
+  box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* line 88, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+button#viewAll:hover {
+  text-decoration: underline;
+}
+
+/* line 91, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+button#viewAll:active {
+  border-bottom: 0;
+  border-top: 3px solid #02435f;
+  box-shadow: inset 3px 3px 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+/*CONTAINER*/
+/* line 98, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#showcase {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+/* line 107, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#showcase div {
+  cursor: pointer;
+  background-color: white;
+  margin: 10px;
+  width: auto;
+  height: 14rem;
+  text-align: center;
+  box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* line 117, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#showcase div img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+/* line 123, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#modal {
+  position: absolute;
+  top: 0;
+  left: auto;
+  display: none;
+}
+
+/* line 129, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#modal #interior {
+  cursor: zoom-out;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0.95;
+  display: none;
+}
+
+/* line 142, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#modal #modalContainer {
+  background-color: #d2d2d2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80vw;
+  text-align: center;
+  margin: 2em 0;
+  padding: 15px;
+}
+
+/* line 154, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#modal #modalContainer table {
+  width: 100%;
+  background-color: #d2d2d2;
+  border-collapse: collapse;
+  color: black;
+}
+
+/* line 160, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#modal #modalContainer table tbody tr {
+  height: 1.2rem;
+}
+
+/* line 161, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#modal #modalContainer table tbody tr:nth-child(odd) {
+  background-color: #c5c5c5;
+}
+
+/* line 163, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#modal #modalContainer table thead tr th {
+  font-family: 'MainFont';
+  letter-spacing: 2px;
+  border-bottom: 2px dotted black;
+  text-align: center;
+  vertical-align: top;
+}
+
+/* line 170, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#modal #modalContainer table thead tr th:first-of-type {
+  width: 1.7rem;
+}
+
+/* line 173, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#modal #modalContainer table tbody tr td {
+  cursor: pointer;
+  font-family: "Spectral SC", serif;
+}
+
+/* line 178, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#modal #modalContainer table tbody tr td:nth-of-type(1), article#modal #modalContainer table thead tr th:nth-of-type(1) {
+  display: none;
+}
+
+/* line 179, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#modal #modalContainer table tbody tr td:nth-of-type(2), article#modal #modalContainer table thead tr th:nth-of-type(2) {
+  display: none;
+}
+
+/* line 180, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#modal #modalContainer table tbody tr td:nth-of-type(10), article#modal #modalContainer table thead tr th:nth-of-type(10) {
+  display: none;
+}
+
+/* line 182, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#modal #modalContainer table tbody tr td:nth-of-type(3) {
+  width: 2rem;
+  text-align: right;
+}
+
+/* line 183, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#modal #modalContainer table tbody tr td:nth-of-type(4) {
+  width: 20rem;
+  text-align: center;
+}
+
+/* line 184, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#modal #modalContainer table tbody tr td:nth-of-type(5) {
+  width: 8rem;
+  text-align: center;
+}
+
+/* line 185, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#modal #modalContainer table tbody tr td:nth-of-type(6) {
+  width: 6rem;
+  text-align: right;
+}
+
+/* line 186, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#modal #modalContainer table tbody tr td:nth-of-type(7) {
+  width: 7rem;
+  text-align: right;
+}
+
+/* line 187, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#modal #modalContainer table tbody tr td:nth-of-type(8) {
+  width: 6rem;
+  text-align: center;
+}
+
+/* line 188, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#modal #modalContainer table tbody tr td:nth-of-type(9) {
+  width: 5rem;
+  text-align: right;
+}
+
+/* line 190, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#modal #modalContainer .focus {
+  cursor: pointer;
+}
+
+/* line 191, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#modal #modalContainer .selected {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* line 195, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#modal #modalContainer .asc:after {
+  content: "\25B2";
+}
+
+/* line 196, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#modal #modalContainer .desc:after {
+  content: "\25BC";
+}
+
+/* line 198, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#modal footer {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4em;
+  line-height: 4em;
+  background-color: black;
+}
+
+/* line 209, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#modal footer button {
+  font-family: 'MainFont';
+  letter-spacing: 2px;
+  background-color: #507687;
+  border: 0;
+  border-bottom: 2px solid #02435f;
+  vertical-align: middle;
+  height: 3em;
+  line-height: 3em;
+}
+
+/* line 221, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#modal footer button:hover {
+  text-decoration: underline;
+}
+
+/* line 224, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#modal footer button:active {
+  border-top: 2px solid black;
+  border-bottom: 0;
+}
+
+/* line 231, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+img#cartTrigger {
+  display: block;
+  position: fixed;
+  top: 10px;
+  right: 25px;
+  color: white;
+  background-color: white;
+  border-radius: 20%;
+  width: 55px;
+  margin-top: 12px;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* line 245, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+aside {
+  font-family: "Spectral SC", serif;
+  text-align: right;
+  display: none;
+  position: fixed;
+  top: 85px;
+  right: 25px;
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* line 259, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+aside::before {
+  content: ' ';
+  background-color: white;
+  position: fixed;
+  top: 70px;
+  right: 45px;
+  height: 24px;
+  width: 10px;
+}
+
+/* line 270, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+aside p {
+  margin: 0;
+}
+
+/* line 272, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#buypage {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: #507687;
+}
+
+/* line 284, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#buypage form {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #FFF;
+  border-radius: 2px;
+  font-family: "Spectral SC", serif;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* line 293, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#buypage form fieldset:not(#formDisabled) {
+  border: 0;
+}
+
+/* line 294, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#buypage form fieldset#formDisabled {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-flow: row wrap;
+  border: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* line 303, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#buypage form fieldset#formDisabled input {
+  margin: 2px;
+  text-align: center;
+}
+
+/* line 305, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#buypage form ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 310, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#buypage form li {
+  display: block;
+  padding: 9px;
+  border: 1px solid #DDDDDD;
+  margin-bottom: 30px;
+  border-radius: 3px;
+}
+
+/* line 316, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#buypage form li :nth-child(5) {
+  border: none;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+/* line 321, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#buypage form li :nth-child(6) {
+  border: none;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+/* line 326, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#buypage form li > label {
+  font-family: "Spectral SC", serif;
+  background: #FFFFFF;
+  color: #B9B9B9;
+  display: block;
+  float: left;
+  margin-top: -19px;
+  height: 14px;
+  padding: 2px 5px 2px 5px;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+/* line 338, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#buypage form li > span {
+  font-family: "Spectral SC", serif;
+  background: #F3F3F3;
+  color: #C0C0C0;
+  display: block;
+  padding: 3px;
+  margin: 0 -9px -9px -9px;
+  text-align: center;
+  font-size: 11px;
+}
+
+/* line 349, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#buypage form input[type='text'],
+article#buypage form input[type='email'] {
+  font-family: "Spectral SC", serif;
+  box-sizing: border-box;
+  width: 100%;
+  display: block;
+  outline: none;
+  border: none;
+  height: 25px;
+  line-height: 25px;
+  font-size: 16px;
+  padding: 0;
+}
+
+/* line 363, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#buypage form input[type='submit'] {
+  background: #507687;
+  color: #D2E2FF;
+  padding: 10px 20px;
+  border: none;
+  border-bottom: 3px solid #02435f;
+  border-radius: 3px;
+}
+
+/* line 370, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#buypage form input[type='submit']:hover {
+  color: #FFFFFF;
+  box-shadow: inset 0px 0px 30px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* line 374, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#buypage form input[type='submit']:active {
+  border-bottom: 0;
+  border-top: 3px solid #507687;
+}
+
+/* line 379, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#buypage form #formBack {
+  background: #507687;
+  color: #D2E2FF;
+  padding: 10px 20px;
+  border: none;
+  border-bottom: 3px solid #02435f;
+  border-radius: 3px;
+}
+
+/* line 386, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#buypage form #formBack:hover {
+  color: #FFFFFF;
+  box-shadow: inset 0px 0px 30px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* line 390, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#buypage form #formBack:active {
+  border-bottom: 0;
+  border-top: 3px solid #507687;
+}
+
+/* line 395, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+article#buypage form input:disabled {
+  height: auto;
+  padding: 2px 8px;
+}
+
+/* line 401, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+section {
+  font-family: "Spectral SC", serif;
+  font-size: 1.2rem;
+  text-align: center;
+  width: 98.8%;
+  border-top: 1px solid #02435f;
+  border-radius: 64px;
+  margin: 0 5px;
+}
+
+/*ADMIN PAGES*/
+/* line 412, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+footer#admin {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  color: #507687;
+  font-size: 1.1rem;
+  padding: 5px;
+}
+
+/* line 420, C:/Users/B-Rad/Documents/Websites/comic-book/_scss/styles.scss */
+legend {
+  font-family: 'MainFont';
+  letter-spacing: 2px;
+}
+
+/*# sourceMappingURL=../_css/styles.map */

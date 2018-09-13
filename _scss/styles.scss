@@ -1,0 +1,420 @@
+@font-face {
+    font-family: 'MainFont';
+    src: url('../fonts/mainframe-bb.regular.ttf');
+}
+@import url('https://fonts.googleapis.com/css?family=Spectral+SC');
+@mixin mainfont() {
+	font-family: 'MainFont';
+	letter-spacing: 2px;
+}
+@mixin prefix($name, $value) {
+  @each $vendor in ('-webkit-', '-moz-', '-ms-', '-o-', '') {
+    #{$vendor}#{$name}: #{$value};
+  }
+}
+
+$rgba-primary-0: rgba( 20, 89,118,1);	// Main Primary color */
+$rgba-primary-1: rgba(210,210,210,1);
+$rgba-primary-2: rgba( 80,118,135,1);
+$rgba-primary-3: rgba(  2, 67, 95,1);
+$rgba-primary-4: rgba(  0,  0,  0,1);
+
+$pageWidth: 80vw;
+$center: 0 auto;
+
+$bodyfont: 'Spectral SC', serif;
+$cursor: pointer;
+
+.nopadding {padding: 0;}
+.nomargin  {margin:  0;}
+
+
+html {
+	background-color: $rgba-primary-0;
+	background-image: url(../images/body_background_dark.png);
+  background-repeat: repeat;
+
+}
+body {
+	width: $pageWidth;
+	margin: $center;
+
+	background-color: $rgba-primary-1;
+	border: 3px $rgba-primary-2 outset;
+
+	box-shadow: -15px 0 50px black;
+
+	font-family: $bodyfont;
+	text-align: center;
+	color: black;
+	div.intro {
+		h1 {
+			@include mainfont;
+			font-size: 3rem;
+			margin: 0;
+			padding-left: 25px;
+
+			/*Text Color*/
+			background-color: $rgba-primary-3;
+			@include prefix('background-clip','text');
+			color: transparent;
+			text-shadow: rgba(255,255,255,0.3) 0px 3px 3px;
+		}
+		ul {text-align: left;}
+	}
+}
+
+button#viewAll {
+	font-family: $bodyfont;
+	color: $rgba-primary-1;
+	cursor: pointer;
+	padding: 4px 8px;
+	line-height: 1.2rem;
+	font-weight: 600;
+
+	display: block;
+	width: 80%;
+	margin: 0 auto;
+	margin-bottom: 5%;
+
+	background-color: $rgba-primary-2;
+
+	border : 0;
+	outline: 0;
+	border-bottom: 3px solid $rgba-primary-3;
+	border-radius: 3px;
+	box-shadow: 3px 3px 8px 0 rgba(0,0,0,0.5);
+
+	&:hover {
+		text-decoration: underline;
+	}
+	&:active {
+		border-bottom: 0;
+		border-top: 3px solid $rgba-primary-3;
+		box-shadow: inset 3px 3px 10px 0 rgba(0,0,0,0.5);
+	}
+}
+/*CONTAINER*/
+article#showcase {
+	display: flex;
+	align-content		: center;
+	justify-content	: center;
+	flex-flow				: row wrap;
+
+	p {
+
+	}
+	div {
+		cursor: pointer;
+		background-color: white;
+		margin: 10px;
+		width: auto;
+		height: 14rem;
+
+		text-align: center;
+
+		box-shadow: 3px 3px 10px 3px rgba(0,0,0,0.5);
+		img {
+			max-height: 100%;
+			max-width: 100%;
+		}
+	}
+}
+article#modal {
+  position: absolute;
+  top: 0;
+  left: auto;
+	display: none;
+
+	#interior {
+		cursor: zoom-out;
+  	background-color: black;
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		opacity: 0.95;
+
+		display: none;
+	}
+	#modalContainer {
+		background-color: #d2d2d2;
+		position: absolute;
+		top : 0;
+		left: 0;
+
+		width: 80vw;
+		text-align: center;
+
+		margin: 2em 0;
+		padding: 15px;
+
+		table {
+			width: 100%;
+			background-color: $rgba-primary-1;
+			border-collapse: collapse;
+			color: black;
+
+			tbody tr {height: 1.2rem;}
+			tbody tr:nth-child(odd) {background-color: darken($rgba-primary-1, 5)}
+
+			thead tr th {
+				@include mainfont;
+
+				border-bottom: 2px dotted black;
+				text-align: center;
+				vertical-align: top;
+			}
+			thead tr th:first-of-type {width: 1.7rem;}
+
+
+			tbody tr td {
+				cursor: pointer;
+				font-family: $bodyfont;
+			}
+
+			tbody tr td:nth-of-type(1), thead tr th:nth-of-type(1) {display: none}
+			tbody tr td:nth-of-type(2), thead tr th:nth-of-type(2) {display: none}
+			tbody tr td:nth-of-type(10), thead tr th:nth-of-type(10) {display: none}
+
+			tbody tr td:nth-of-type(3) {width: 2rem;  text-align: right;}
+			tbody tr td:nth-of-type(4) {width: 20rem; text-align: center;}
+			tbody tr td:nth-of-type(5) {width: 8rem;  text-align: center;}
+			tbody tr td:nth-of-type(6) {width: 6rem;  text-align: right;}
+			tbody tr td:nth-of-type(7) {width: 7rem;  text-align: right;}
+			tbody tr td:nth-of-type(8) {width: 6rem;  text-align: center;}
+			tbody tr td:nth-of-type(9) {width: 5rem;  text-align: right;}
+		}
+		.focus {cursor: pointer;}
+		.selected {
+			text-decoration: underline;
+			font-weight: bold;
+		}
+		.asc:after  {content: "\25B2";}
+		.desc:after {content: "\25BC";}
+	}
+	footer {
+		display : block;
+		position: fixed;
+		bottom: 0;
+		left  : 0;
+
+		width: 100%;
+		height: 4em;
+		line-height: 4em;
+
+		background-color: black;
+		button {
+			@include mainfont();
+
+
+			background-color: $rgba-primary-2;
+			border: 0;
+			border-bottom: 2px solid $rgba-primary-3;
+
+			vertical-align: middle;
+			height: 3em;
+			line-height: 3em;
+
+			&:hover {
+				text-decoration: underline;
+			}
+			&:active {
+				border-top: 2px solid black;
+				border-bottom: 0;
+			}
+		}
+	}
+}
+img#cartTrigger {
+	display: block;
+	position: fixed;
+	top  : 10px;
+	right: 25px;
+
+	color: white;
+	background-color: white;
+	border-radius: 20%;
+	width: 55px;
+	margin-top: 12px;
+	box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.5);
+	z-index: 1;
+}
+aside {
+	font-family: $bodyfont;
+	text-align: right;
+	display: none;
+
+	position: fixed;
+	top  : 85px;
+	right: 25px;
+
+	background-color: white;
+	padding: 15px;
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.5);
+
+	&::before {
+		content: ' ';
+		background-color: white;
+
+		position: fixed;
+		top  : 70px;
+		right: 45px;
+
+		height: 24px;
+		width:  10px;
+	}
+	p {margin: 0;}
+}
+article#buypage {
+	display: none;
+
+	position: fixed;
+	top   : 0;
+	right : 0;
+	width : 100%;
+	height: 100%;
+
+	text-align: center;
+	background-color: $rgba-primary-2;
+
+	form {
+		max-width: 400px;
+		margin : 50px auto;
+		padding: 20px;
+		background: #FFF;
+		border-radius: 2px;
+		font-family: $bodyfont;
+		box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.5);
+
+		fieldset:not(#formDisabled) {border: 0;}
+		fieldset#formDisabled {
+			display: flex;
+			align-content		: center;
+			justify-content : center;
+			flex-flow				: row wrap;
+
+			border: 0;
+			padding: 0;
+			text-align: center;
+			input {margin: 2px; text-align: center;}
+		}
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+		li {
+			display: block;
+			padding: 9px;
+			border: 1px solid #DDDDDD;
+			margin-bottom: 30px;
+			border-radius: 3px;
+			:nth-child(5) {
+				border: none;
+				margin-bottom: 0px;
+				text-align: center;
+			}
+			:nth-child(6) {
+				border: none;
+				margin-bottom: 0px;
+				text-align: center;
+			}
+			> label {
+				font-family: $bodyfont;
+				background: #FFFFFF;
+				color: #B9B9B9;
+				display: block;
+				float: left;
+				margin-top: -19px;
+				height: 14px;
+				padding: 2px 5px 2px 5px;
+				font-size: 14px;
+				overflow: hidden;
+			}
+			> span {
+				font-family: $bodyfont;
+				background: #F3F3F3;
+				color: #C0C0C0;
+				display: block;
+				padding: 3px;
+				margin: 0 -9px -9px -9px;
+				text-align: center;
+				font-size: 11px;
+			}
+		}
+		input[type='text'],
+		input[type='email'],	{
+			font-family: $bodyfont;
+			box-sizing: border-box;
+
+			width: 100%;
+			display: block;
+			outline: none;
+			border: none;
+			height: 25px;
+			line-height: 25px;
+			font-size: 16px;
+			padding: 0;
+		}
+		input[type='submit'] {
+			background: $rgba-primary-2;
+			color: #D2E2FF;
+			padding: 10px 20px;
+			border: none;
+			border-bottom: 3px solid $rgba-primary-3;
+			border-radius: 3px;
+			&:hover {
+				color: #FFFFFF;
+				box-shadow: inset 0px 0px 30px 5px rgba(0,0,0,0.5);
+			}
+			&:active {
+				border-bottom: 0;
+				border-top: 3px solid $rgba-primary-2;
+			}
+		}
+		#formBack {
+			background: $rgba-primary-2;
+			color: #D2E2FF;
+			padding: 10px 20px;
+			border: none;
+			border-bottom: 3px solid $rgba-primary-3;
+			border-radius: 3px;
+			&:hover {
+				color: #FFFFFF;
+				box-shadow: inset 0px 0px 30px 5px rgba(0,0,0,0.5);
+			}
+			&:active {
+				border-bottom: 0;
+				border-top: 3px solid $rgba-primary-2;
+			}
+		}
+		input:disabled {
+			height: auto;
+			padding: 2px 8px;
+		}
+	}
+}
+section {
+	font-family: $bodyfont;
+	font-size: 1.2rem;
+	text-align: center;
+	width: 98.8%;
+	border-top: 1px solid $rgba-primary-3;
+	border-radius: 64px;
+	margin: 0 5px;
+}
+
+/*ADMIN PAGES*/
+footer#admin {
+	position: fixed;
+	bottom: 0;
+	left  : 0;
+	color: $rgba-primary-2;
+	font-size: 1.1rem;
+	padding: 5px;
+}
+legend {@include mainfont;}
